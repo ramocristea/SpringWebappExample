@@ -11,7 +11,16 @@
         http://www.springframework.org/schema/mvc
         http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
-	<context:component-scan
-		base-package="org.sda.springwebappexample.controller" />
+	<context:component-scan base-package="org.sda.springwebappexample.controller" />
+		
 	<mvc:annotation-driven />
+	
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix">
+            <value>/WEB-INF/pages/</value>
+        </property>
+        <property name="suffix">
+            <value>.jsp</value>
+        </property>
+    </bean>
 </beans>
