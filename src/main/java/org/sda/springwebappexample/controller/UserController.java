@@ -88,4 +88,19 @@ public class UserController {
 
 		return "userPage";
 	}
+
+	@RequestMapping(value = "/addUser", method = RequestMethod.GET)
+	public String getUserForm(Model model) {
+		User user = new User();
+		model.addAttribute("user", user);
+		return "userForm";
+	}
+
+	@RequestMapping(value="/addUser", method=RequestMethod.POST)
+	public String saveUser(Model model, @ModelAttribute("user") User user) {
+		model.addAttribute("user1", user);
+		
+		return "userPage";
+		
+	}
 }
